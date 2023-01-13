@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis
+{% endblock %}
+
+{% block body %}
+	<style>
+		h1 {
+			font-size: 1.8rem;
+			margin: 3% auto;
+			text-align: center;
+		}
+
+		.btn {
+			font-size: 1.4rem;
+		}
+	</style>
+
+	<h1 style="">Devis</h1>
+	<div class="m-3" style="font-size: 1.5rem;">
+		{{ form_start(devisForm) }}
+		{{ form_row(devisForm.Nom) }}
+		{{ form_row(devisForm.societe) }}
+		{{ form_row(devisForm.email) }}
+		{{ form_row(devisForm.adresse) }}
+		{{ form_row(devisForm.ville) }}
+		{{ form_row(devisForm.code_postal) }}
+		{{ form_row(devisForm.message) }}
+	
+
+		<button type="submit" class="btn">Envoyer</button>
+		{{ form_end(devisForm) }}
+	</div>
+{% endblock %}

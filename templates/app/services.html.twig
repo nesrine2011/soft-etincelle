@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<style>
+		img {
+			height: 200px;
+			width: ;
+		}
+
+        .tout .row {
+            margin: 50px;
+            justify-content: center;
+        }
+
+        h1 {
+            margin: 5%;
+            text-align: center;
+        }
+	</style>
+
+
+	<h1>Vous voyez les services possibles</h1>
+<div class="tout">
+	<div class="row">
+		<div class="col-md-3">
+			<img src="media/student.jpg" alt="">
+		</div>
+		<p class="col-md-6">Démarches administratives auprès d'organismes (cpam, impôts, infogreffe,...)
+
+			<br>
+			Rédaction de courrier simple.
+			<br>
+
+			Numérisation de documents
+		</p>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<img src="media/comptabilité.jpg" alt="">
+		</div>
+		<p class="col-md-6">Pré-saisie comptable
+			<br>
+			Conseil et aide dans la gestion de la paie (contrat de travail, bulletins de salaires, ...)</p>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<img src="media/dollar.jpg" alt="">
+		</div>
+		<p class="col-md-6">Création de devis, factures</p>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<img src="media/dossier.jpg" alt="">
+		</div>
+		<p class="col-md-6">Classement de dossiers</p>
+	</div>
+</div>
+
+
+{% endblock %}

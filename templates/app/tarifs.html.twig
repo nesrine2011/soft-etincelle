@@ -1,0 +1,105 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+	<style>
+		h1 {
+			font-size: 2rem;
+			
+			margin: 5%;
+			text-align: center;
+		}
+		.infos,
+		table {
+			font-size: 1.5rem;
+		}
+        .infos {
+            margin: 50px;
+        }
+		h4 {
+			font-size: 1.8rem;
+		}
+	</style>
+
+	<h1>Tarifs de votre agence de service</h1>
+
+	<div class="row justify-content-center">
+		<table class="table table-hover" style="width: 60vw; ">
+			<thead style="background: #90E0EF; text-align: center;">
+				<tr>
+
+					<th scope="col">Service</th>
+					<th scope="col">Tarifs</th>
+
+				</tr>
+			</thead>
+			<tbody style="background: #CAF0F8;">
+				<tr>
+
+					<td>Classement de vos documents</td>
+					<td>Sur Devis</td>
+
+
+				</tr>
+				<tr>
+
+					<td>Création de devis, factures</td>
+					<td>Sur Devis</td>
+
+				</tr>
+				<tr>
+
+					<td>Comptabilité</td>
+					<td>Sur Devis</td>
+
+				</tr>
+				<tr>
+
+					<td>Démarches administratives auprès d'organismes (cpam, impôts, infogreffe,...)</td>
+					<td>Sur Devis</td>
+
+				</tr>
+				<tr>
+
+					<td>Rédaction de courrier simple</td>
+					<td>Sur Devis</td>
+				</tr>
+
+				<tr>
+					<td>Numérisation de documents</td>
+					<td>Sur Devis</td>
+				</tr>
+
+				<tr>
+					<td>Conseil et aide dans la gestion de la paie (contrat de travail, bulletins de salaires, ...)</td>
+					<td>Sur Devis</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="infos">
+		<h4>Tarifs majorés :</h4>
+		<ul>
+			<li>+25% entre 19h et 6h, les dimanches et jours fériés</li>
+			<li>+100% le 1er mai et le 25 décembre</li>
+		</ul>
+
+		<br>
+
+		<h4>Nos avantages :
+		</h4>
+		<ul>
+			<li>Tarifs clairs (pas de frais de dossier, pas de frais de gestion…)</li>
+			<li>Avance immédiate en place</li>
+			<li>Réduction fiscale ou crédit d’impôts de 50% (plafond annuel de 12000 €)</li>
+			<li>Aides financières (APA, PCH…)</li>
+			<li>Sans engagement</li>
+			<li>Libre choix de paiement (chèque, prélèvement, CESU préfinancé...)
+			</li>
+		</ul>
+
+	</div>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<style>
+		iframe {
+			height: 70vh;
+			width: 60vw;
+		}
+
+		.parent {
+			position: relative;
+			margin: 5% 10%;
+		}
+
+		.enfant {
+			position: absolute;
+			left: 50%;
+			top: 15%;
+			z-index: 3;
+			padding: 5%;
+			background: white;
+			box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+			animation: 2s diapo ease-in;
+		}
+
+		.enfant strong {
+			color: #ff97b7;
+			letter-spacing: 0.05rem;
+		}
+
+		.enfant a {
+			text-decoration: none;
+			color: grey;
+		}
+
+        .enfant h1 {
+            color: #ff97b7;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .enfant span, .enfant p {
+            color: grey;
+        }
+
+		@keyframes diapo {
+			0% {
+				left: 2000px;
+				opacity: ;
+			}
+			100% {
+				left: 50%;
+			}
+		}
+	</style>
+
+
+	<div class="parent">
+		<iframe class="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.3437318984693!2d6.174490616145897!3d49.118106690337854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794dc1d4894110d%3A0xa30e00600df5f84!2s22%20Rue%20de%20Ladoucette%2C%2057000%20Metz!5e0!3m2!1sfr!2sfr!4v1672490163112!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+		<div class="enfant">
+			<h1>
+				<span>Contactez
+				</span>nous</h1>
+			<p>
+				<strong>Téléphone:
+				</strong>
+				<br>
+				<a href="tel:+33783794485">0783794485</a>
+			</p>
+			<p>
+				<strong>Email:
+				</strong>
+				<br>
+				<a href="mailto:abderrahmanesofia92@gmail.com">abderrahmanesofia92@gmail.com</a>
+			</p>
+			<p>
+				<strong>Adresse:
+				</strong>
+				<br>
+				22 rue de Ladoucette, Metz</p>
+		</div>
+	</div>
+
+
+{% endblock %}

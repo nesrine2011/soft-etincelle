@@ -1,0 +1,234 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		h1,
+		h2,
+		h3,
+		h4 {
+			text-align: center;
+		}
+
+		.experiences img {
+			height: 200px;
+
+			object-fit: cover;
+
+		}
+
+		.experiences {
+			display: flex;
+			justify-content: center;
+		}
+
+		.carousel {
+			width: 70vw;
+			margin: auto;
+		}
+
+		.carousel-item {
+			text-align: center;
+		}
+
+		.carousel-item img {
+			object-fit: cover;
+			height: 90vh;
+			width: 70vw;
+		}
+		.qualites {
+			display: flex;
+			justify-content: space-around;
+		}
+		.qualites img {
+			background: grey;
+			border-radius: 300px;
+			padding: 20px;
+
+		}
+		.qualites span {
+			font-size: 1.5rem;
+			text-transform: uppercase;
+
+			font-weight: 600;
+		}
+		h2 {
+			margin: 5% auto 2%;
+		}
+
+		.qualites img:hover {
+			background: #90e0ef;
+
+		}
+
+		.enSavoirPlus img {
+			height: 200px;
+			width: 200px;
+			object-fit: cover;
+			border-radius: 200px;
+		}
+
+		.enSavoirPlus .caseInfo div {
+			text-align: center;
+		}
+
+		.enSavoirPlus .caseInfo p {
+			text-align: justify;
+		}
+
+		.enSavoirPlus .caseInfo {
+			display: flex;
+			flex-direction: column;
+			max-width: 500px;
+			align-items: center;
+			padding: 2%;
+			margin: 5% auto;
+			box-shadow: 4px 20px 20px 0px rgb(0 0 0 / 15%);
+			justify-content: space-between;
+			border-radius: 10px;
+		}
+
+		.enSavoirPlus .btn {
+			font-size: 1.5rem;
+		}
+	</style>
+
+	<div id="carouselExampleIndicators" class="carousel slide p-4" data-bs-ride="true">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner" style="box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);">
+			<div class="carousel-item active">
+				<img src="media/clavier.jpg" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5></h5>
+					<p>Nous mettons à votre disposition des aides administratives et qui répondent à vos besoins.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+
+				<img src="media/files.jpg" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Pour qui?</h5>
+					<p>Vous êtes une startup, une PME, un grand groupe, un service public ou une association ? Vous exercez une profession libérale (avocat, médecin, architecte…) ?</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="media/mark.jpg" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Pourquoi ?</h5>
+					<p>Voulez-vous développer votre entreprise, gérer vos comptes, dossiers et Optimiser votre temps ?
+						<br>Vous etes au bon endroit</p>
+
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<!-- Three columns of text below the carousel -->
+	<div class="row enSavoirPlus justify-content-around">
+		<div class="col-lg-4 caseInfo">
+			<div>
+				<img src="media/secr.jpg" alt="">
+				<h2 class="fw-normal">Missions
+				</h2>
+				<p>
+					Réceptionner, rédiger et transmettre vos courriers et vos e-mails, gérer votre agenda professionel, préparer vos voyages et déplacements, organiser vos réunions, prendre en notes les échanges et rédiger les comptes rendus, trier et organiser le classement de documents et dossiers.
+				</p>
+			</div>
+			<p>
+				<a class="btn btn-primary" href="{{ path('services') }}">En savoir plus
+				</a>
+			</p>
+		</div>
+		<!-- /.col-lg-4 -->
+		<div class="col-lg-4 caseInfo">
+			<div class="">
+				<img src="media/dollar.jpg" class="" style="" alt="">
+				<h2 class="fw-normal">Tarifs
+				</h2>
+				<p>Devis gratuit : contactez notre agence de services. Nous proposons des tarifs adaptés et concurrenciels.
+				</p>
+			</div>
+			<p>
+				<a class="btn btn-primary" href="{{ path('tarifs') }}">
+					En savoir plus
+				</a>
+			</p>
+		</div>
+		<!-- /.col-lg-4 -->
+		<div class="col-lg-4 caseInfo">
+			<div>
+				<img src="media/telephone.jpg" class="" height="100px" alt="">
+				<h2 class="fw-normal">Contactez-nous !</h2>
+				<p>Notre offre vous intéresse ? Vous hésitez encore ? Contactez-nous, nous vous répondrons dans les meilleurs délais.
+				</p>
+			</div>
+			<p>
+				<a class="btn btn-primary" href="#">
+					En savoir plus
+				</a>
+			</p>
+		</div>
+	</div>
+
+
+	<div class="row featurette justify-content-center" style="background :#CAF0F8; width:100vw;padding:20px 0; align-items:center;">
+		<div class="col-md-5 mr-2">
+			<h2 class="featurette-heading fw-normal lh-1">
+				<font style="text-align: center;">Mon parcours</font>
+			</h2>
+			<p class="lead" style="text-align: justify;">
+				J’ai travaillée chez Eurochem-pharmasolutions, Celio France SAS et également chez BIOPHARMAoù j’étais chargé d’assurer les travaux de saisie informatique, de secrétariat courant et le traitement des opérations comptables et de trésorerie. Cette expérience m’a beaucoup appris et m’a permis d’acquérir d’une part les connaissances pratiques du métier mais également de développer mes compétences dans des domaines telles que la gestion des contrats de partenariat.
+				<br>
+				Possédant un DESS de Droit des Entreprises et des expériences dans le métier de juriste que j'ai pu acquérir au cours des 2 dernières années, je vous propose mes services.
+			</p>
+		</div>
+		<div class="col-md-3">
+			<img src="media/woman.jpg" style="width: 50vh; height: 50vh; object-fit: cover; border-radius:50vh;" alt="">
+		</div>
+	</div>
+
+	<div>
+		<h2>Ils m'ont fait confiance</h2>
+		<div class="experiences">
+
+			<img src="media/eurochem.jpg" alt="">
+			<img src="media/biosanté.jpg" alt="">
+			<img src="media/Aigleazur.jpg" alt="">
+			<img src="media/celio.png" alt="">
+		</div>
+
+	</div>
+
+	<h2>Mes Qualités</h2>
+	<div class="qualites">
+
+		<div>
+			<img src="media/autonomie.png" alt="">
+			<span>Autonomie</span>
+		</div>
+
+		<div>
+			<img src="media/disponibilité.png" alt="">
+			<span>Disponibilité</span>
+		</div>
+
+		<div>
+			<img src="media/adapt.png" alt="">
+			<span>Adaptabilité</span>
+		</div>
+	</div>
+
+{% endblock %}

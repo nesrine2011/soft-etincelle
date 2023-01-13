@@ -1,0 +1,83 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	{% if is_granted('ROLE_ADMIN') == false %}
+		<h1>Vous n'êtes pas habilité à accéder à cette page.</h1>
+		<a href="{{ path('app_accueil') }}">Accueil</a>
+	{% else %}
+		<style>
+
+			.tout {
+				/* display: flex;
+				flex-flow: row wrap; */
+				font-size: 1.25rem;
+			}
+
+			.carte {
+				display: flex;
+				flex-direction: row;
+				margin: 10px;
+				padding: 10px;
+				box-shadow: inset -2px 2px 7px #00000036, inset 2px -1px 7px #0000002b;
+			}
+
+			.nom,
+			.message {
+				margin: 10px;
+			}
+
+			.nom {
+				width: 20%;
+			}
+
+			.message {
+				width: 70%;
+			}
+
+			.separator {
+				width: 1px;
+				background: pink;
+			}
+
+			h5 {
+				color: #FFA6C1;
+			}
+            h1{
+                text-align:center;
+                margin:5% auto;
+            }
+            a{
+                text-decoration:none;
+                color:black;
+            }
+
+		</style>
+		<H1>Mes demandes de devis</H1>
+		<div class="tout">
+
+			{% for data in devis %}
+				<div class="carte">
+					<div class="nom">
+						<h5>Nom prénom:</h5>
+						{{  data.nom }}
+						<h5>Société:</h5>
+						{{data.societe}}
+						<h5>Email:</h5>
+						<a href="mailto:{{data.email}}">{{data.email}}</a>
+						<h5>Adresse:</h5>
+						{{data.adresse}}
+						{{data.ville}}
+						{{data.codePostal}}
+					</div>
+					<div class="separator"></div>
+					<div class="message">
+						<h5>Demande:</h5>
+						{{data.message}}
+					</div>
+				</div>
+			{% endfor %}
+
+
+		</div>
+
+	{% endif %}
+{% endblock %}
