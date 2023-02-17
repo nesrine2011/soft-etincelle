@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
+
 li {
   list-style: none;
 }
@@ -48,6 +49,7 @@ footer h6 {
 }
 
 /* accueil */
+
 h1,
 h2,
 h3,
@@ -57,8 +59,8 @@ h4 {
 
 .experiences img {
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+
+  object-fit: cover;
 }
 
 .experiences {
@@ -76,29 +78,25 @@ h4 {
 }
 
 .carousel-item img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 90vh;
   width: 70vw;
 }
-
 .qualites {
   display: flex;
   justify-content: space-around;
 }
-
 .qualites img {
   background: grey;
   border-radius: 300px;
   padding: 20px;
 }
-
 .qualites span {
   font-size: 1.5rem;
   text-transform: uppercase;
+
   font-weight: 600;
 }
-
 h2 {
   margin: 5% auto 2%;
 }
@@ -110,8 +108,7 @@ h2 {
 .enSavoirPlus img {
   height: 200px;
   width: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 200px;
 }
 
@@ -130,7 +127,7 @@ h2 {
   align-items: center;
   padding: 2%;
   margin: 5% auto;
-  box-shadow: 4px 20px 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 20px 20px 0 rgb(0 0 0 / 15%);
   justify-content: space-between;
   border-radius: 10px;
 }
@@ -144,7 +141,7 @@ h2 {
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and(max-width: 600px) {
   .enSavoirPlus {
     display: flex;
     flex-direction: column;
@@ -152,4 +149,4 @@ h2 {
   .enSavoirPlus .caseInfo {
     max-width: 750px;
   }
-}/*# sourceMappingURL=style.css.map */
+}

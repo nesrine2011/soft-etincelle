@@ -11,76 +11,66 @@
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
-		<link rel="stylesheet" href="{{ asset('media/style.css') }}" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+		<link rel="stylesheet" href="{{ asset('assets/style.css') }}" >
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
+
+		
 	</head>
 	<body>
-		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
-
-			p,
-			li,
-			nav {
-				font-size: 1.5rem;
-			}
+	
 
 
-			nav a {
-				font-size: 1.5rem;
-			}
+		<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
+			<div class="container-fluid">
+			<a class="logo navbar-brand" href="{{ path('app_accueil') }}">Soft Etincelle</a>
+				
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
 
-			nav .logo {
-				font-family: 'Alex Brush', 'times new roman', serif;
-				font-size: 3rem;
-				padding-left: 2%;
-			}
+						<a class="nav-link active" aria-current="page" href="{{ path('app_accueil') }}">Accueil</a>
 
-			/* FOOTER */
-			footer #nomSite {
-				font-family: 'Alex Brush', 'times new roman', serif;
-				text-transform: capitalize;
-				font-size: 5rem;
-			}
+						<a class="nav-link" href="{{ path('services') }}">Services</a>
 
-			footer h6 {
-				font-size: 1.5em;
-			}
-		</style>
-		<nav class="navbar navbar-expand-lg navbar-dark" style="background: #00B4D8;">
-			<a class="navbar-brand logo" href="{{ path('app_accueil') }}">Soft Etincelle</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav justify-content-around">
-					<a class="nav-item nav-link active" href="{{ path('app_accueil') }}">Accueil
-						<span class="sr-only">(current)</span>
-					</a>
-					<a class="nav-item nav-link" href="{{ path('services') }}">Services</a>
-					<a class="nav-item nav-link" href="{{ path('tarifs') }}">Tarifs</a>
-					<a class="nav-item nav-link" href="{{ path('devis') }}">Devis</a>
-					<a class="nav-item nav-link" href="{{ path('contact') }}">Contact</a>
-					{% if is_granted('ROLE_ADMIN') %}
-						<a class="nav-link active" href="{{ path('backoffice') }}">Utilisateurs</a>
-						<a class="nav-link active" href="{{ path('admin_devis') }}">Mes demandes</a>
-					{% endif %}
-					{% if app.user %}
-						<a class="nav-link active" href="{{ path('app_logout') }}">Déconnexion</a>
-					{% else %}
-						<a class="nav-link active" href="{{ path('app_login') }}">Connexion</a>
-						<a class="nav-link active" href="{{ path('app_register') }}">Inscription</a>
-					{% endif %}
+						<a class="nav-link" href="{{ path('tarifs') }}">Tarifs</a>
+
+						<a class="nav-link" href="{{ path('devis') }}">Devis</a>
+
+						<a class="nav-link" href="{{ path('contact') }}">Contact</a>
+
+						{% if is_granted('ROLE_ADMIN') %}
+
+							<a class="nav-link" href="{{ path('backoffice') }}">Utilisateurs</a>
+
+
+							<a class="nav-link" href="{{ path('admin_devis') }}">Mes demandes</a>
+
+						{% endif %}
+						{% if app.user %}
+
+							<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+
+						{% else %}
+
+							<a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+
+							<a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
+
+						{% endif %}
+					</div>
+
 				</div>
 			</div>
 		</nav>
-
 		{% for message in app.flashes('success') %}
 			<div class="alert alert-success">
 				{{ message }}
@@ -183,6 +173,6 @@
 		</footer>
 		<!-- Footer -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</body>
 </html>
