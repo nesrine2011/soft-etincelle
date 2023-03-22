@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
-
 :root {
---grape: #0077B6;
---dark-violet: #8b2fc9ff;
---amethyst: #ab51e3ff;
---lavender-floral: #00B4D8;
---heliotrope: #d283ffff;
---mauve: #dc97ffff;
+  --footer: #0077B6;
+  --nav: #00B4D8;
 }
+
 a {
   text-decoration: none;
   color: white;
 }
+
 li {
   list-style: none;
 }
@@ -45,7 +42,7 @@ nav .logo {
 }
 
 nav {
-  background: var(--lavender-floral);
+  background: var(--nav);
   padding: 10px;
 }
 
@@ -72,28 +69,28 @@ h4 {
   height: 200px;
   width: 200px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-#celio{
+
+#celio {
   height: 100px;
-  width: 200px; 
+  width: 200px;
   align-self: center;
 }
+
 .experiences {
   display: flex;
   justify-content: center;
-
 }
 
 .carousel {
   width: 100vw;
   margin: auto;
 }
+
 .carousel-caption:not(.unique) {
   color: black !important;
-
 }
-
 
 .carousel-item {
   text-align: center;
@@ -101,7 +98,7 @@ h4 {
 
 .carousel-item img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   /* height: 90vh; */
   width: 100%;
 }
@@ -110,15 +107,13 @@ h4 {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
-
-  
 }
 
 .qualites img {
   background: grey;
   border-radius: 300px;
   padding: 20px;
-  margin:10px;
+  margin: 10px;
 }
 
 .qualites span {
@@ -139,7 +134,7 @@ h2 {
   height: 200px;
   width: 200px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 200px;
 }
 
@@ -165,27 +160,26 @@ h2 {
 
 .enSavoirPlus {
   display: flex;
-  flex-flow:row wrap;
+  flex-flow: row wrap;
 }
 
 .enSavoirPlus .btn {
   font-size: 1.5rem;
 }
+
 footer {
-  background:var(--grape);
+  background: var(--footer);
 }
+
 @media screen and (max-width: 600px) {
   .enSavoirPlus, .experiences, .qualites {
     display: flex;
     flex-direction: column;
-  
   }
   .experiences {
-align-items: center;
-
+    align-items: center;
   }
   .enSavoirPlus .caseInfo {
     max-width: 750px;
   }
- 
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

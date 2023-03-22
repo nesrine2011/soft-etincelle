@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
 
+:root {
+--footer: #0077B6;
+--nav: #00B4D8;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
 li {
   list-style: none;
 }
@@ -33,7 +41,7 @@ nav .logo {
 }
 
 nav {
-  background: #00b4d8;
+  background: var(--nav);
   padding: 10px;
 }
 
@@ -49,7 +57,6 @@ footer h6 {
 }
 
 /* accueil */
-
 h1,
 h2,
 h3,
@@ -59,44 +66,63 @@ h4 {
 
 .experiences img {
   height: 200px;
-
-  object-fit: cover;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-
+#celio{
+  height: 100px;
+  width: 200px; 
+  align-self: center;
+}
 .experiences {
   display: flex;
   justify-content: center;
+
 }
 
 .carousel {
-  width: 70vw;
+  width: 100vw;
   margin: auto;
 }
+.carousel-caption:not(.unique) {
+  color: black !important;
+
+}
+
 
 .carousel-item {
   text-align: center;
 }
 
 .carousel-item img {
-  object-fit: cover;
-  height: 90vh;
-  width: 70vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* height: 90vh; */
+  width: 100%;
 }
+
 .qualites {
   display: flex;
   justify-content: space-around;
+  flex-flow: row wrap;
+
+  
 }
+
 .qualites img {
   background: grey;
   border-radius: 300px;
   padding: 20px;
+  margin:10px;
 }
+
 .qualites span {
   font-size: 1.5rem;
   text-transform: uppercase;
-
   font-weight: 600;
 }
+
 h2 {
   margin: 5% auto 2%;
 }
@@ -108,7 +134,8 @@ h2 {
 .enSavoirPlus img {
   height: 200px;
   width: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 200px;
 }
 
@@ -117,7 +144,7 @@ h2 {
 }
 
 .enSavoirPlus .caseInfo p {
-  text-align: justify;
+  text-align: start;
 }
 
 .enSavoirPlus .caseInfo {
@@ -127,26 +154,34 @@ h2 {
   align-items: center;
   padding: 2%;
   margin: 5% auto;
-  box-shadow: 4px 20px 20px 0 rgb(0 0 0 / 15%);
+  box-shadow: 4px 20px 20px 0 rgba(0, 0, 0, 0.15);
   justify-content: space-between;
   border-radius: 10px;
 }
 
 .enSavoirPlus {
   display: flex;
-  flex-direction: row;
+  flex-flow:row wrap;
 }
 
 .enSavoirPlus .btn {
   font-size: 1.5rem;
 }
-
-@media screen and(max-width: 600px) {
-  .enSavoirPlus {
+footer {
+  background:var(--footer);
+}
+@media screen and (max-width: 600px) {
+  .enSavoirPlus, .experiences, .qualites {
     display: flex;
     flex-direction: column;
+  
+  }
+  .experiences {
+align-items: center;
+
   }
   .enSavoirPlus .caseInfo {
     max-width: 750px;
   }
-}
+ 
+}/*# sourceMappingURL=style.css.map */
