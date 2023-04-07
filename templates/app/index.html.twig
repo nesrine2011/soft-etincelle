@@ -5,6 +5,7 @@
 
 {% block body %}
 	
+	{# <a href="{{ path('sendMail') }}">Envoyer le mail</a> #}
 
 	<div id="carouselExampleIndicators" class="carousel slide p-4" data-bs-ride="true">
 		<div class="carousel-indicators">
@@ -88,7 +89,7 @@
 				</p>
 			</div>
 			<p>
-				<a class="btn btn-primary" href="#">
+				<a class="btn btn-primary" href="{{path('contact')}}">
 					En savoir plus
 				</a>
 			</p>
