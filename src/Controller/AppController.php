@@ -15,7 +15,9 @@ use App\Entity\Utilisateur;
 // require_once 'App/PHPMailer/src/SMTP.php';
 
 use App\Form\DevisFormType;
+use PHPMailer\PHPMailer\SMTP;
 use App\Form\RegistrationFormType;
+use PHPMailer\PHPMailer\PHPMailer;
 use App\Repository\DevisRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\UtilisateurRepository;
@@ -147,7 +149,7 @@ class AppController extends AbstractController
     {
         $manager->remove($utilisateur);
         $manager->flush();
-        $this->addFlash('success', "!");
+        $this->addFlash('success', "Utilisateur supprimé!");
         return $this->redirectToRoute('backoffice');
 
     }
@@ -170,7 +172,6 @@ class AppController extends AbstractController
         }
 
         return $this->render('app/devis.html.twig', [
-            'controller_name' => 'AppController',
             'devisForm' => $form->createView()
         ]);
     }
@@ -185,23 +186,15 @@ class AppController extends AbstractController
         ]);
     }
 
-    
     #[Route("/admin/devis/supprimer/{id}", name:"admin_supprimer_devis")]
-    public function supprimerDevis(Devis $devis, EntityManagerInterface $manager)
+    public function deleteDevis(Devis $devis, EntityManagerInterface $manager)
     {
         $manager->remove($devis);
         $manager->flush();
-        $this->addFlash('success', "!");
-        return $this->redirectToRoute('backoffice');
+        $this->addFlash('success', "La demande de devis a bien été supprimée!");
+        return $this->redirectToRoute('admin_devis');
 
     }
-    // #[Route("/admin/Devis/supprimer/{id}", name:"admin_supprimer_la demande")]
-    // public function supprimer( demande $demande, EntityManagerInterface $manager)
-    // {
-    //     $manager->remove($demande);
-    //     $manager->flush();
-    //     $this->addFlash('success', "!");
-    //     return $this->redirectToRoute('/admin/devis');
 
-    // }
+  
 }
