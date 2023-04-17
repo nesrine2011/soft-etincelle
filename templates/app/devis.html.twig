@@ -26,9 +26,13 @@
 		{{ form_row(devisForm.ville) }}
 		{{ form_row(devisForm.code_postal) }}
 		{{ form_row(devisForm.message) }}
+		{# {{ form_row(devisForm.supprimer) }} #}
+		
+		{# <td> <a href="{{path('admin_supprimer_utilisateur', {id: ligne.id})}}" style="color:black;"> Supprimer</a> </td> #}
 	
 
 		<button type="submit" class="btn">Envoyer</button>
+		<button type="submit" class="btn">Supprimer</button>
 		{{ form_end(devisForm) }}
 	</div>
 {% endblock %}

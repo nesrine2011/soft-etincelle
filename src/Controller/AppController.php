@@ -141,6 +141,16 @@ class AppController extends AbstractController
             'utilisateurs' => $utilisateurs,
         ]);
     }
+    
+    #[Route("/admin/utilisateur/supprimer/{id}", name:"admin_supprimer_utilisateur")]
+    public function deleteUtilisateur(Utilisateur $utilisateur, EntityManagerInterface $manager)
+    {
+        $manager->remove($utilisateur);
+        $manager->flush();
+        $this->addFlash('success', "!");
+        return $this->redirectToRoute('backoffice');
+
+    }
 
     #[Route('/devis', name: 'devis')]
     public function devis(Request $request, EntityManagerInterface $entityManager): Response
@@ -174,4 +184,24 @@ class AppController extends AbstractController
            
         ]);
     }
+
+    
+    #[Route("/admin/devis/supprimer/{id}", name:"admin_supprimer_devis")]
+    public function supprimerDevis(Devis $devis, EntityManagerInterface $manager)
+    {
+        $manager->remove($devis);
+        $manager->flush();
+        $this->addFlash('success', "!");
+        return $this->redirectToRoute('backoffice');
+
+    }
+    // #[Route("/admin/Devis/supprimer/{id}", name:"admin_supprimer_la demande")]
+    // public function supprimer( demande $demande, EntityManagerInterface $manager)
+    // {
+    //     $manager->remove($demande);
+    //     $manager->flush();
+    //     $this->addFlash('success', "!");
+    //     return $this->redirectToRoute('/admin/devis');
+
+    // }
 }

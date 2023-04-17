@@ -72,6 +72,12 @@
 					<div class="message">
 						<h5>Demande:</h5>
 						{{data.message}}
+						<h5>supprimer la demande:</h5>
+						{# {{data.admin_supprimer_Demande}} #}
+						{# <td> <a href="{{path('admin_supprimer_utilisateur', {id: ligne.id})}}" style="color:black;"> Supprimer</a> </td> #}
+	{# <a href="{{path('admin_supprimer_Demande', {id: ligne.id})}}" style="color:black;"> Supprimer</a> #}
+						<button type="submit" class="btn">Supprimer</button>
+		
 					</div>
 				</div>
 			{% endfor %}

@@ -5,7 +5,7 @@
     <h1>Vous n'êtes pas habilité à accéder à cette page.</h1>
 		<a href="{{ path('app_accueil') }}">Accueil</a>
 	{% else %}
-	BACKOFFICE
+	<h2>BACKOFFICE </h2>
 	<table class="table">
 		<thead>
 			<tr>
@@ -13,7 +13,9 @@
 				<th scope="col">Nom</th>
 				<th scope="col">Prénom</th>
 				<th scope="col">Email</th>
-				<th scope="col">Nom de société</th>
+				<th scope="col">Nom de société </th>
+				<th scope="col">Actions</th>
+
 			</tr>
 		</thead>
 		<tbody class="table-group-divider">
@@ -24,6 +26,8 @@
 					<td>{{ ligne.prenom }}</td>
 					<td>{{ ligne.email }}</td>
 					<td>{{ ligne.societe }}</td>
+					<td> <a href="{{path('admin_supprimer_utilisateur', {id: ligne.id})}}" style="color:black;"> Supprimer</a> </td>
+					  
 				</tr>
 			{% endfor %}
 		</tbody>
