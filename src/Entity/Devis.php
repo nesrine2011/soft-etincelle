@@ -36,13 +36,7 @@ class Devis
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
-    #[ORM\ManyToOne]
-    private ?Utilisateur $utilisateur = null;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+   
 
     public function getNom(): ?string
     {
@@ -130,15 +124,4 @@ class Devis
         return $this;
     }
 
-    public function getUtilisateur(): ?Utilisateur
-    {
-        return $this->utilisateur;
-    }
-
-    public function setUtilisateur(?Utilisateur $utilisateur): self
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
 }
